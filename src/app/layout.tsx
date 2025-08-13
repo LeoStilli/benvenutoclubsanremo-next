@@ -1,11 +1,6 @@
-import type { Metadata } from "next";
-import "./globals.css";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Benvenuto Club Sanremo",
-  description: "Benvenuto Club Sanremo",
-  robots: { index: true, follow: true },
-};
+import "./globals.css";
 
 export default function RootLayout({
   children,

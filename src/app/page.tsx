@@ -1,11 +1,5 @@
-import type { Metadata } from "next";
+"use client";
 import Navbar from "../../components/Navbar";
-
-export const generateMetadata = async (): Promise<Metadata> => {
-  return {
-    title: `Home | Benvenuto Club Sanremo`,
-  };
-};
 
 const Home = () => {
   return (
