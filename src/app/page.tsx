@@ -9,7 +9,8 @@ export const generateMetadata = async (): Promise<Metadata> => {
 const Home = () => {
   return (
     <>
-      <h1>Benvenuto Club Sanremo</h1>
+      <h1>Benvenuto Club Sanremo</h1>\
+      <p>Welcome to the Benvenuto Club Sanremo!</p>
     </>
   );
 };
