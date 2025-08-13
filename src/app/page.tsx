@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Navbar from "../../components/Navbar";
 
 export const generateMetadata = async (): Promise<Metadata> => {
   return {
@@ -9,7 +10,8 @@ export const generateMetadata = async (): Promise<Metadata> => {
 const Home = () => {
   return (
     <>
-      <h1>Benvenuto Club Sanremo</h1>\
+      <Navbar />
+      <h1>Benvenuto Club Sanremo</h1>
       <p>Welcome to the Benvenuto Club Sanremo!</p>
     </>
   );
