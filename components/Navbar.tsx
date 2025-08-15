@@ -27,7 +27,7 @@ const Navbar = () => {
   return (
     <div className="w-full h-[120px] text-white z-10 absolute top-0">
       <div className="w-full max-w-[1500px] h-full mx-auto flex items-center justify-between px-4">
-        <div className="relative w-[180px] h-[150px] rounded-md overflow-hidden">
+        <div className="relative w-[180px] h-full rounded-md overflow-hidden">
           <Link href="/">
             <Image
               src="/LogoSanremo.png"
@@ -42,8 +42,8 @@ const Navbar = () => {
             <Link
               key={route.name}
               href={route.route}
-              className={`text-xl ${
-                pathname === route.route ? "font-bold" : ""
+              className={`text-xl py-2 ${
+                pathname === route.route ? "font-bold border-b-2 text-blue-300" : ""
               }`}
             >
               {route.name}
