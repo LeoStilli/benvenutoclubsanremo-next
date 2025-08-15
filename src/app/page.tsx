@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar";
 import Image from "next/image";
 import events from "../hooks/useEvents";
 import Footer from "../../components/Footer";
+import Newsletter from "../../components/Newsletter";
 
 const Home = () => {
   return (
@@ -22,7 +23,9 @@ const Home = () => {
               gatherings!
             </p>
             <Link
-              href={`/events#${events[0].title.toLowerCase().replace(/\s+/g, "-")}`}
+              href={`/events#${events[0].title
+                .toLowerCase()
+                .replace(/\s+/g, "-")}`}
               scroll={false}
             >
               <button className="mt-4 px-12 py-4 bg-blue-600 text-white font-semibold rounded cursor-pointer hover:bg-gray-800 transition">
@@ -94,12 +97,19 @@ const Home = () => {
                   onClick={() => console.log(`Clicked on ${event.title}`)}
                 >
                   <div className="w-full h-[160px] relative mb-4">
-                    <Image
-                      src={event.image}
-                      alt={event.title}
-                      fill
-                      className="rounded mb-4 object-cover"
-                    />
+                    <Link
+                      href={`/events#${event.title
+                        .toLowerCase()
+                        .replace(/\s+/g, "-")}`}
+                      scroll={false}
+                    >
+                      <Image
+                        src={event.image}
+                        alt={event.title}
+                        fill
+                        className="rounded mb-4 object-cover"
+                      />
+                    </Link>
                   </div>
                   <h3 className="text-xl font-semibold mb-2 text-[#000000]">
                     {event.title}
@@ -108,7 +118,9 @@ const Home = () => {
                     {event.description}
                   </p>
                   <Link
-                    href={`/events#${event.title.toLowerCase().replace(/\s+/g, "-")}`}
+                    href={`/events#${event.title
+                      .toLowerCase()
+                      .replace(/\s+/g, "-")}`}
                     scroll={false}
                   >
                     <button className="mt-4 px-6 py-2 bg-blue-600 text-white font-semibold rounded cursor-pointer hover:bg-gray-800 transition ">
@@ -121,6 +133,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Newsletter />
       <Footer />
     </>
   );
