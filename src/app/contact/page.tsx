@@ -12,12 +12,11 @@ const ContactPage = () => {
         <div className="w-full h-full bg-black absolute top-0 opacity-35" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center flex flex-col items-center gap-4 max-w-[900px]">
-            <h1 className="text-white text-6xl font-bold">
-              Contact Us
-            </h1>
+            <h1 className="text-white text-6xl font-bold">Contact Us</h1>
             <p className="text-white text-2xl mt-2">
-              Join our free monthly newsletter subscription. Have questions or want to learn more about our upcoming events? 
-              Feel free to reach out - we'd love to hear from you!
+              Join our free monthly newsletter subscription. Have questions or
+              want to learn more about our upcoming events? Feel free to reach
+              out - we'd love to hear from you!
             </p>
           </div>
           <div className="absolute bottom-6 text-center text-white">

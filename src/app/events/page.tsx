@@ -12,9 +12,7 @@ const EventsPage = () => {
         <div className="w-full h-full bg-black absolute top-0 opacity-35" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center flex flex-col items-center gap-4 max-w-[800px]">
-            <h1 className="text-white text-6xl font-bold">
-              Events
-            </h1>
+            <h1 className="text-white text-6xl font-bold">Events</h1>
             <p className="text-white text-2xl mt-2">
               See and find out about our upcoming events!
             </p>
