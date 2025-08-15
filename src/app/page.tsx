@@ -21,8 +21,11 @@ const Home = () => {
               Join our English speaking community for cultural and social
               gatherings!
             </p>
-            <Link href="/events">
-              <button className="mt-4 px-12 py-4 bg-white text-[#000000] font-semibold rounded cursor-pointer hover:bg-gray-200 transition">
+            <Link
+              href={`/events#${events[0].title.toLowerCase().replace(/\s+/g, "-")}`}
+              scroll={false}
+            >
+              <button className="mt-4 px-12 py-4 bg-blue-600 text-white font-semibold rounded cursor-pointer hover:bg-gray-800 transition">
                 Upcoming Events
               </button>
             </Link>
@@ -105,11 +108,10 @@ const Home = () => {
                     {event.description}
                   </p>
                   <Link
-                    href={`/events#${event.title
-                      .toLowerCase()
-                      .replace(/\s+/g, "-")}`}
+                    href={`/events#${event.title.toLowerCase().replace(/\s+/g, "-")}`}
+                    scroll={false}
                   >
-                    <button className="mt-4 px-6 py-2 bg-[#000000] text-white font-semibold rounded cursor-pointer hover:bg-gray-800 transition ">
+                    <button className="mt-4 px-6 py-2 bg-blue-600 text-white font-semibold rounded cursor-pointer hover:bg-gray-800 transition ">
                       Learn More
                     </button>
                   </Link>
