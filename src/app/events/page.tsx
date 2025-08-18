@@ -63,15 +63,15 @@ const EventsPage = () => {
                     {event.title}
                   </h3>
                   <p className="text-gray-700 mb-2">{event.description}</p>
-                  <Link
-                    href={`/events#${event.title
-                      .toLowerCase()
-                      .replace(/\s+/g, "-")}`}
+                  <a
+                    href="https://docs.google.com/forms/d/1JTKdpfRTB4X_Tc3GS0twnVCTHQpW20iBLo8jWl7rEzg/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <button className="mt-2 px-6 py-2 bg-blue-600 text-white font-semibold rounded cursor-pointer hover:bg-gray-800 transition ">
-                      Learn More
+                      RSVP here
                     </button>
-                  </Link>
+                  </a>
                 </div>
               </div>
             ))}
