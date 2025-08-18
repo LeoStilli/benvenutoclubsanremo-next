@@ -15,7 +15,7 @@ const ContactPage = () => {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center flex flex-col items-center gap-4 max-w-[900px]">
             <h1 className="text-white text-6xl font-bold">Contact Us</h1>
-            <p className="text-white text-2xl mt-2">
+            <p className="text-white md:text-2xl mt-2">
               Join our free monthly newsletter subscription. Have questions or
               want to learn more about our upcoming events? Feel free to reach
               out - we'd love to hear from you!
@@ -28,8 +28,8 @@ const ContactPage = () => {
       </div>
       <Newsletter />
       <div className="w-full bg-linear-to-t bg-white flex items-center justify-center py-16 px-4">
-        <div className="w-full max-w-[1500px] grid grid-cols-2 gap-8 px-8 items-center">
-          <h2 className="text-3xl font-bold mb-6 text-black text-right">
+        <div className="w-full max-w-[1500px] grid lg:grid-cols-2 gap-8 lg:px-8 items-center">
+          <h2 className="text-3xl font-bold mb-6 text-black text-center lg:text-right">
             Let's Get In Touch.
           </h2>
           <form className="min-w-1/2 w-full max-w-xl p-8 flex flex-col gap-4">

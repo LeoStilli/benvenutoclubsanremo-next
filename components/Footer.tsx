@@ -16,7 +16,7 @@ const Footer = () => {
               />
             </div>
           </div>
-          <span className="text-xl font-semibold">BenvenutoClubSanremo</span>
+          <span className="md:block hidden text-xl font-semibold">BenvenutoClubSanremo</span>
         </div>
         <div className="flex gap-8 text-white">
           <Link href="/" className="hover:underline">

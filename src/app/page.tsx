@@ -18,7 +18,7 @@ const Home = () => {
             <h1 className="text-white text-6xl font-bold">
               Benvenuto Club Sanremo
             </h1>
-            <p className="text-white text-2xl mt-2">
+            <p className="text-white md:text-2xl mt-2">
               Join our English speaking community for cultural and social
               gatherings!
             </p>
