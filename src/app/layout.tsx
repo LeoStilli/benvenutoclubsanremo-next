@@ -1,5 +1,6 @@
 "use client";
 
+import Metadata from "../../components/Metadata";
 import "./globals.css";
 
 export default function RootLayout({
@@ -9,6 +10,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Metadata />
       <body>{children}</body>
     </html>
   );
