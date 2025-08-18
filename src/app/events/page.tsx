@@ -56,7 +56,7 @@ const EventsPage = () => {
             Upcoming Events
           </h2>
           <div className="flex flex-col gap-8 w-full">
-            {events.map((event: any) => (
+            {events.map((event: Event) => (
               <div
                 key={event.title}
                 id={event.title.toLowerCase().replace(/\s+/g, "-")}
