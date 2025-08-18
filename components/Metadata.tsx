@@ -19,7 +19,7 @@ const Metadata = () => {
       />
       <meta
         property="og:image"
-        content="https://metatags.io/images/meta-tags.png"
+        content="https://benvenutoclubsanremo.com/banner.jpg"
       />
 
       <meta property="twitter:card" content="summary_large_image" />
@@ -34,7 +34,7 @@ const Metadata = () => {
       />
       <meta
         property="twitter:image"
-        content="https://metatags.io/images/meta-tags.png"
+        content="https://benvenutoclubsanremo.com/banner.jpg"
       />
     </head>
   );
