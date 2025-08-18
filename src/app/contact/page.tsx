@@ -18,6 +18,7 @@ const ContactPage = () => {
           <div className="text-center flex flex-col items-center gap-4 max-w-[900px]">
             <h1 className="text-white text-6xl font-bold">Contact Us</h1>
             <p className="text-white md:text-2xl mt-2">
+              {" "}
               Join our free monthly newsletter subscription. Have questions or
               want to learn more about our upcoming events? Feel free to reach
               out - we'd love to hear from you!
