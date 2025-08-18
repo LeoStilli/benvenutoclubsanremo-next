@@ -2,14 +2,27 @@
 
 import Navbar from "../../../components/Navbar";
 import Image from "next/image";
-import events from "../../hooks/useEvents";
-import Link from "next/link";
 import Footer from "../../../components/Footer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Newsletter from "../../../components/Newsletter";
+import { Event } from "@/hooks/useEvents";
 
 const EventsPage = () => {
+  const [events, setEvents] = useState<Event[]>([]);
+
   useEffect(() => {
+    // Fetch events from the API
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch("/api/events");
+        const data = await response.json();
+        console.log(data);
+        setEvents(data);
+      } catch (error) {
+        console.error("Error fetching events:", error);
+      }
+    };
+    fetchEvents();
     if (window.location.hash) {
       const el = document.getElementById(window.location.hash.substring(1));
       if (el) {
@@ -43,7 +56,7 @@ const EventsPage = () => {
             Upcoming Events
           </h2>
           <div className="flex flex-col gap-8 w-full">
-            {events.map((event) => (
+            {events.map((event: any) => (
               <div
                 key={event.title}
                 id={event.title.toLowerCase().replace(/\s+/g, "-")}

@@ -2,11 +2,26 @@
 import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Image from "next/image";
-import events from "../hooks/useEvents";
 import Footer from "../../components/Footer";
 import Newsletter from "../../components/Newsletter";
+import { useEffect, useState } from "react";
+import { Event } from "@/hooks/useEvents";
 
 const Home = () => {
+  const [events, setEvents] = useState<Event[] | null>(null);
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch("/api/events");
+        const data = await response.json();
+        console.log(data);
+        setEvents(data);
+      } catch (error) {
+        console.error("Error fetching events:", error);
+      }
+    };
+    fetchEvents();
+  }, []);
   return (
     <>
       <Navbar />
@@ -23,7 +38,7 @@ const Home = () => {
               gatherings!
             </p>
             <Link
-              href={`/events#${events[0].title
+              href={`/events#${events ? events[0].title : ""}
                 .toLowerCase()
                 .replace(/\s+/g, "-")}`}
               scroll={false}
@@ -90,45 +105,47 @@ const Home = () => {
               Upcoming Events
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
-              {events.map((event) => (
-                <div
-                  key={event.title}
-                  className="bg-white rounded shadow p-4 flex flex-col items-center cursor-pointer"
-                  onClick={() => console.log(`Clicked on ${event.title}`)}
-                >
-                  <div className="w-full h-[160px] relative mb-4">
-                    <Link
-                      href={`/events#${event.title
-                        .toLowerCase()
-                        .replace(/\s+/g, "-")}`}
-                      scroll={false}
+              {events
+                ? events.map((event) => (
+                    <div
+                      key={event.title}
+                      className="bg-white rounded shadow p-4 flex flex-col items-center cursor-pointer"
+                      onClick={() => console.log(`Clicked on ${event.title}`)}
                     >
-                      <Image
-                        src={event.image}
-                        alt={event.title}
-                        fill
-                        className="rounded mb-4 object-cover"
-                      />
-                    </Link>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 text-[#000000]">
-                    {event.title}
-                  </h3>
-                  <p className="text-gray-700 text-center">
-                    {event.description}
-                  </p>
-                  <Link
-                    href={`/events#${event.title
-                      .toLowerCase()
-                      .replace(/\s+/g, "-")}`}
-                    scroll={false}
-                  >
-                    <button className="mt-4 px-6 py-2 bg-blue-600 text-white font-semibold rounded cursor-pointer hover:bg-gray-800 transition ">
-                      Learn More
-                    </button>
-                  </Link>
-                </div>
-              ))}
+                      <div className="w-full h-[160px] relative mb-4">
+                        <Link
+                          href={`/events#${event.title
+                            .toLowerCase()
+                            .replace(/\s+/g, "-")}`}
+                          scroll={false}
+                        >
+                          <Image
+                            src={event.image}
+                            alt={event.title}
+                            fill
+                            className="rounded mb-4 object-cover"
+                          />
+                        </Link>
+                      </div>
+                      <h3 className="text-xl font-semibold mb-2 text-[#000000]">
+                        {event.title}
+                      </h3>
+                      <p className="text-gray-700 text-center">
+                        {event.description}
+                      </p>
+                      <Link
+                        href={`/events#${event.title
+                          .toLowerCase()
+                          .replace(/\s+/g, "-")}`}
+                        scroll={false}
+                      >
+                        <button className="mt-4 px-6 py-2 bg-blue-600 text-white font-semibold rounded cursor-pointer hover:bg-gray-800 transition ">
+                          Learn More
+                        </button>
+                      </Link>
+                    </div>
+                  ))
+                : null}
             </div>
           </div>
         </div>
