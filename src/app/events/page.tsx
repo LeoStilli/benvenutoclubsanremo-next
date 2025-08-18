@@ -37,7 +37,7 @@ const EventsPage = () => {
         </div>
       </div>
       <Newsletter />
-      <div className="w-full bg-[#f5f5f5] flex flex-col items-center w-full py-12 px:1 sm:px-5 md:px-10 xl:px-30">
+      <div className="w-full bg-[#f5f5f5] flex flex-col items-center py-12 px:1 sm:px-5 md:px-10 xl:px-30">
         <div className="flex flex-col items-center gap-6 w-full max-w-[1500px]">
           <h2 className="text-3xl font-bold mb-8 text-[#000000]">
             Upcoming Events
