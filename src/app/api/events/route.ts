@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 import { get, getDatabase, ref } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "REDACTED",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: "benvenuto-club-sanremo.firebaseapp.com",
   databaseURL:
     "https://benvenuto-club-sanremo-default-rtdb.europe-west1.firebasedatabase.app",
