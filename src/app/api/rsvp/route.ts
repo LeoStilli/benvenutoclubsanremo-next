@@ -24,8 +24,8 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    // Decode the private key (it may be base64 encoded)
-    const decodedPrivateKey = privateKey.replace(/\\n/g, "\n");
+    // Decode the private key (base64 encoded for Vercel compatibility)
+    const decodedPrivateKey = Buffer.from(privateKey, 'base64').toString('utf8');
 
     // Create Google Auth instance
     const auth = new GoogleAuth({
