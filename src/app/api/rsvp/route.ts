@@ -24,8 +24,19 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    // Decode the private key (base64 encoded for Vercel compatibility)
-    const decodedPrivateKey = Buffer.from(privateKey, 'base64').toString('utf8');
+    // Handle private key - try base64 first, fallback to direct format
+    let decodedPrivateKey;
+    try {
+      // Try base64 decoding first (for Vercel environment)
+      decodedPrivateKey = Buffer.from(privateKey, 'base64').toString('utf8');
+      // Verify it looks like a valid private key
+      if (!decodedPrivateKey.includes('BEGIN PRIVATE KEY')) {
+        throw new Error('Not base64 encoded');
+      }
+    } catch {
+      // Fallback to direct format with newline replacement (for local development)
+      decodedPrivateKey = privateKey.replace(/\\n/g, "\n");
+    }
 
     // Create Google Auth instance
     const auth = new GoogleAuth({
@@ -63,6 +74,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ message: "RSVP submitted successfully!" });
   } catch (error: any) {
     console.error("Error writing to Google Sheets:", error);
+    console.error("Error details:", {
+      message: error.message,
+      code: error.code,
+      status: error.status,
+      stack: error.stack
+    });
     return NextResponse.json(
       { error: "Failed to submit RSVP" },
       { status: 500 }
