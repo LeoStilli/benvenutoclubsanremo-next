@@ -66,10 +66,18 @@ const EventsPage = () => {
                   {event.title}
                 </h3>
                 <p className="text-gray-600 text-sm mb-1">
-                  {formatDate(event.date)}
+                  {formatDate(event.date)} at {event.time}
                 </p>
-                <p className="text-gray-600 text-sm mb-3">
-                  {event.location}
+                <p className="text-gray-600 text-sm mb-1">
+                  📍 {event.location}
+                </p>
+                {event.cost && (
+                  <p className="text-green-600 text-sm mb-1 font-medium">
+                    💰 {event.cost}
+                  </p>
+                )}
+                <p className="text-blue-600 text-sm mb-3">
+                  🎯 Event coordinator(s): {event.coordinators}
                 </p>
                 <p className="text-gray-700 mb-4 flex-grow">
                   {event.description}

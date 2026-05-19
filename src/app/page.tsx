@@ -72,7 +72,7 @@ const Home = () => {
                 Founded in 2005, the BCS began with a simple yet powerful idea:
                 to bring together English speakers in the Sanremo area through
                 friendship, culture, and shared experiences. Today, our thriving
-                community of over 250 members enjoys a lively calendar of
+                community of over 400 members enjoys a lively calendar of
                 events—from guided museum visits and town explorations to
                 stimulating discussions, social lunches, cocktails, and outdoor
                 activities like hiking, padel, and tennis. Whether you are
@@ -138,7 +138,7 @@ const Home = () => {
                   <div className="flex items-center gap-2 mb-3">
                     <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
                     <span className="text-blue-600 text-sm font-semibold">
-                      {formatDate(event.date)}
+                      {formatDate(event.date)} at {event.time}
                     </span>
                   </div>
 
@@ -146,11 +146,21 @@ const Home = () => {
                     {event.title}
                   </h3>
 
-                  <div className="flex items-center gap-1 mb-3">
+                  <div className="flex items-center gap-1 mb-2">
                     <svg className="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                     </svg>
                     <span className="text-gray-500 text-sm">{event.location}</span>
+                  </div>
+
+                  {event.cost && (
+                    <div className="text-green-600 text-sm mb-2 font-medium">
+                      💰 {event.cost}
+                    </div>
+                  )}
+
+                  <div className="text-blue-600 text-sm mb-3">
+                    🎯 {event.coordinators}
                   </div>
 
                   <p className="text-gray-600 mb-6 line-clamp-2 leading-relaxed">

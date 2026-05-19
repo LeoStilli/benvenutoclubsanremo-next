@@ -86,8 +86,90 @@ const JoinUsPage = () => {
         </div>
       </div>
 
-      {/* Membership Information */}
+      {/* Member Perks */}
       <div className="w-full py-16 bg-white flex flex-col items-center">
+        <div className="flex flex-col items-center gap-12 w-full px-4 max-w-[1200px]">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold mb-4 text-[#000000]">
+              Exclusive Member Perks
+            </h2>
+            <p className="text-gray-600 text-lg max-w-3xl">
+              Enjoy special discounts and opportunities available only to BCS members
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+            {/* Italian Lessons */}
+            <div className="bg-gradient-to-br from-blue-50 to-white rounded-xl p-8 shadow-lg border border-blue-100">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-[#000000] text-center">
+                Learn Italian
+              </h3>
+              <div className="text-center mb-4">
+                <span className="text-2xl font-bold text-blue-600">€30/month</span>
+                <div className="text-sm text-gray-600">A1, A2, B1 Levels</div>
+              </div>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Proper Italian lessons from an amazing instructor. All learning materials included.
+                Held in a historic palazzo in Sanremo. Additional costs include a fee for insurance
+                and palazzo membership, plus a BCS Club fee.
+              </p>
+              <div className="mt-4 p-3 bg-blue-50 rounded-lg">
+                <p className="text-xs text-blue-800 font-medium">
+                  New course begins September 2026
+                </p>
+              </div>
+            </div>
+
+            {/* Wellness Center */}
+            <div className="bg-gradient-to-br from-green-50 to-white rounded-xl p-8 shadow-lg border border-green-100">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clipRule="evenodd"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-[#000000] text-center">
+                Wellness Center
+              </h3>
+              <div className="text-center mb-4">
+                <span className="text-2xl font-bold text-green-600">€30</span>
+                <div className="text-sm text-gray-600">instead of €40</div>
+              </div>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                3 hours Monday–Friday at the newly renovated wellness center at Grand Hotel des Anglais.
+                Email BCS with your date of attendance and we will notify the hotel of your club discount.
+              </p>
+            </div>
+
+            {/* Symphony Orchestra */}
+            <div className="bg-gradient-to-br from-purple-50 to-white rounded-xl p-8 shadow-lg border border-purple-100">
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M18 3a1 1 0 00-1.447-.894L8.763 6H5a3 3 0 000 6h3.763l7.79 3.894A1 1 0 0018 15V3zM3.485 14.485a.5.5 0 01-.707-.707L4.464 12.05A2.5 2.5 0 015 12h1.464l-2.979-2.777a.5.5 0 01.707-.707L6.879 11.207A1 1 0 017 11h.586l-1.793-1.793a.5.5 0 01.707-.707L8.293 10.293A1 1 0 019 10h2a1 1 0 000-2H9a1 1 0 01-.707-.293L6.5 5.914a.5.5 0 01.707-.707L9 6.879A1 1 0 019 7h2a3 3 0 000-6H9a1 1 0 01-.707-.293L6.5 1.914a.5.5 0 01.707-.707L9 3.879A1 1 0 019 4h2a5 5 0 010 10H9a1 1 0 01-.707-.293L6.5 11.914a.5.5 0 01.707-.707L9 12.879A1 1 0 019 13h2a1 1 0 000-2H9a1 1 0 01-.707-.293l-1.793-1.793a.5.5 0 01.707-.707L8.879 9.207A1 1 0 019 9h2a3 3 0 000-6H9a1 1 0 01-.707-.293L6.5 1.914a.5.5 0 01.707-.707L9 2.879A1 1 0 019 3h2a5 5 0 010 10z" clipRule="evenodd"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-[#000000] text-center">
+                Symphony Orchestra
+              </h3>
+              <div className="text-center mb-4">
+                <span className="text-2xl font-bold text-purple-600">€3 Pass</span>
+                <div className="text-sm text-gray-600">€8 tickets instead of €15</div>
+              </div>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Sanremo Symphony Orchestra Season Pass gives you €8/concert tickets through June 30th.
+                A summer season pass at Teatro Alfano will also be available offering €15 tickets instead of €25.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Membership Information */}
+      <div className="w-full py-16 bg-[#f5f5f5] flex flex-col items-center">
         <div className="flex flex-col items-center gap-8 w-full px-4 max-w-[800px]">
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-6 text-[#000000]">
