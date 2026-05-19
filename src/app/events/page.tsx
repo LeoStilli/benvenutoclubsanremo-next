@@ -1,35 +1,28 @@
 "use client";
 
+import { useState } from "react";
 import Navbar from "../../../components/Navbar";
 import Image from "next/image";
 import Footer from "../../../components/Footer";
-import { useEffect, useState } from "react";
 import Newsletter from "../../../components/Newsletter";
-import { Event } from "@/hooks/useEvents";
+import RSVPModal from "../../components/RSVPModal";
+import { events, Event } from "../../data/events";
 
 const EventsPage = () => {
-  const [events, setEvents] = useState<Event[]>([]);
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
 
-  useEffect(() => {
-    // Fetch events from the API
-    const fetchEvents = async () => {
-      try {
-        const response = await fetch("/api/events");
-        const data = await response.json();
-        console.log(data);
-        setEvents(data);
-      } catch (error) {
-        console.error("Error fetching events:", error);
-      }
-    };
-    fetchEvents();
-    if (window.location.hash) {
-      const el = document.getElementById(window.location.hash.substring(1));
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, []);
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
+
+  const handleRSVP = (event: Event) => {
+    setSelectedEvent(event);
+  };
 
   return (
     <>
@@ -49,49 +42,57 @@ const EventsPage = () => {
           </div>
         </div>
       </div>
-      <Newsletter />
-      <div className="w-full bg-[#f5f5f5] flex flex-col items-center py-12 px:1 sm:px-5 md:px-10 xl:px-30">
-        <div className="flex flex-col items-center gap-6 w-full max-w-[1500px]">
+
+      <div className="w-full py-12 bg-[#f5f5f5] flex flex-col items-center">
+        <div className="flex flex-col items-center gap-6 w-full px-4 max-w-[1200px]">
           <h2 className="text-3xl font-bold mb-8 text-[#000000]">
             Upcoming Events
           </h2>
-          <div className="flex flex-col gap-8 w-full">
-            {events.map((event: Event) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+            {events.map((event) => (
               <div
-                key={event.title}
-                id={event.title.toLowerCase().replace(/\s+/g, "-")}
-                className="bg-white rounded shadow p-10 flex flex-col items-center md:items-start gap-6 cursor-pointer"
-                onClick={() => console.log(`Clicked on ${event.title}`)}
+                key={event.id}
+                className="bg-white rounded shadow p-6 flex flex-col"
               >
-                <div className="w-full h-[200px] md:h-[500px] relative mb-4 md:mb-0">
+                <div className="w-full h-[200px] relative mb-4">
                   <Image
                     src={event.image}
                     alt={event.title}
                     fill
-                    className={"rounded object-cover " + event.imageClassName}
+                    className="rounded object-cover"
                   />
                 </div>
-                <div className="flex-1 flex flex-col items-center md:items-start">
-                  <h3 className="text-xl font-semibold mb-2 text-[#000000]">
-                    {event.title}
-                  </h3>
-                  <p className="text-gray-700 mb-2">{event.description}</p>
-                  <a
-                    href="https://docs.google.com/forms/d/1JTKdpfRTB4X_Tc3GS0twnVCTHQpW20iBLo8jWl7rEzg/viewform"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <button className="mt-2 px-6 py-2 bg-blue-600 text-white font-semibold rounded cursor-pointer hover:bg-gray-800 transition ">
-                      RSVP here
-                    </button>
-                  </a>
-                </div>
+                <h3 className="text-xl font-semibold mb-2 text-[#000000]">
+                  {event.title}
+                </h3>
+                <p className="text-gray-600 text-sm mb-1">
+                  {formatDate(event.date)}
+                </p>
+                <p className="text-gray-600 text-sm mb-3">
+                  {event.location}
+                </p>
+                <p className="text-gray-700 mb-4 flex-grow">
+                  {event.description}
+                </p>
+                <button
+                  onClick={() => handleRSVP(event)}
+                  className="px-6 py-2 bg-blue-600 text-white font-semibold rounded cursor-pointer hover:bg-gray-800 transition self-start"
+                >
+                  RSVP
+                </button>
               </div>
             ))}
           </div>
         </div>
       </div>
+
+      <Newsletter />
       <Footer />
+      <RSVPModal
+        event={selectedEvent}
+        isOpen={selectedEvent !== null}
+        onClose={() => setSelectedEvent(null)}
+      />
     </>
   );
 };
