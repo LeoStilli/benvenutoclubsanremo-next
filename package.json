@@ -11,20 +11,24 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@sanity/icons": "^3.7.4",
+    "@sanity/vision": "^5.26.0",
     "firebase": "^12.1.0",
     "googleapis": "^171.4.0",
     "next": "^16.2.6",
+    "next-sanity": "^13.0.0",
     "nodemailer": "^7.0.5",
     "react": "^19.2.6",
-    "react-dom": "^19.2.6"
+    "react-dom": "^19.2.6",
+    "sanity": "^5.26.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/nodemailer": "^7.0.0",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
     "eslint": "^9",
     "eslint-config-next": "15.4.6",
     "tailwindcss": "^4",
