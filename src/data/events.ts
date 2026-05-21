@@ -8,6 +8,8 @@ export interface Event {
   coordinators: string;
   description: string;
   image: string;
+  status?: 'active' | 'cancelled' | 'postponed';
+  cancelReason?: string;
 }
 
 export const events: Event[] = [
@@ -21,6 +23,7 @@ export const events: Event[] = [
     coordinators: "Ann",
     description: "Watch L'incredibile storia dell'isola delle rose (in Italian with English subtitles). An extraordinary true story about freedom, rebellion, and the courage to dream differently, set against the beauty and spirit of 1960s Italy. Afterward, an aperitivo and friendly conversation led by BCS Italian teacher Emanuela.",
     image: "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    status: "cancelled"
   },
   {
     id: "2",

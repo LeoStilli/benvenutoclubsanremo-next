@@ -113,10 +113,14 @@ const Home = () => {
                 key={event.id}
                 className={`group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 relative ${
                   index === 0 ? 'ring-2 ring-blue-200 ring-opacity-50' : ''
-                }`}
+                } ${event.status === 'cancelled' ? 'opacity-90 border-2 border-red-200' : ''}`}
               >
-                {/* Featured Badge for first event */}
-                {index === 0 && (
+                {/* Status Badges */}
+                {event.status === 'cancelled' ? (
+                  <div className="absolute top-4 left-4 z-10 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse">
+                    ❌ CANCELLED
+                  </div>
+                ) : index === 0 && (
                   <div className="absolute top-4 left-4 z-10 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold">
                     NEXT UP
                   </div>
@@ -128,21 +132,44 @@ const Home = () => {
                     src={event.image}
                     alt={event.title}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    className={`object-cover transition-transform duration-500 ${
+                      event.status === 'cancelled'
+                        ? 'grayscale group-hover:grayscale-0'
+                        : 'group-hover:scale-110'
+                    }`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                  <div className={`absolute inset-0 bg-gradient-to-t ${
+                    event.status === 'cancelled'
+                      ? 'from-red-900/40 to-transparent'
+                      : 'from-black/20 to-transparent'
+                  }`}></div>
+                  {event.status === 'cancelled' && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="bg-black/70 text-white px-4 py-2 rounded-lg text-lg font-bold transform -rotate-12">
+                        CANCELLED
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Content */}
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                    <span className="text-blue-600 text-sm font-semibold">
+                    <div className={`w-2 h-2 rounded-full ${
+                      event.status === 'cancelled' ? 'bg-red-600' : 'bg-blue-600'
+                    }`}></div>
+                    <span className={`text-sm font-semibold ${
+                      event.status === 'cancelled' ? 'text-red-600 line-through' : 'text-blue-600'
+                    }`}>
                       {formatDate(event.date)} at {event.time}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold mb-2 text-[#000000] group-hover:text-blue-600 transition-colors">
+                  <h3 className={`text-xl font-bold mb-2 transition-colors ${
+                    event.status === 'cancelled'
+                      ? 'text-gray-500 line-through'
+                      : 'text-[#000000] group-hover:text-blue-600'
+                  }`}>
                     {event.title}
                   </h3>
 
@@ -150,29 +177,46 @@ const Home = () => {
                     <svg className="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-gray-500 text-sm">{event.location}</span>
+                    <span className={`text-sm ${
+                      event.status === 'cancelled' ? 'text-gray-400 line-through' : 'text-gray-500'
+                    }`}>{event.location}</span>
                   </div>
 
                   {event.cost && (
-                    <div className="text-green-600 text-sm mb-2 font-medium">
+                    <div className={`text-sm mb-2 font-medium ${
+                      event.status === 'cancelled' ? 'text-gray-400 line-through' : 'text-green-600'
+                    }`}>
                       💰 {event.cost}
                     </div>
                   )}
 
-                  <div className="text-blue-600 text-sm mb-3">
+                  <div className={`text-sm mb-3 ${
+                    event.status === 'cancelled' ? 'text-gray-400' : 'text-blue-600'
+                  }`}>
                     🎯 {event.coordinators}
                   </div>
 
-                  <p className="text-gray-600 mb-6 line-clamp-2 leading-relaxed">
+                  <p className={`mb-6 line-clamp-2 leading-relaxed ${
+                    event.status === 'cancelled' ? 'text-gray-500' : 'text-gray-600'
+                  }`}>
                     {event.description}
                   </p>
 
-                  <button
-                    onClick={() => handleRSVP(event)}
-                    className="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 active:bg-blue-800 transition-colors duration-200 shadow-md hover:shadow-lg"
-                  >
-                    Reserve Your Spot
-                  </button>
+                  {event.status === 'cancelled' ? (
+                    <button
+                      disabled
+                      className="w-full px-6 py-3 bg-gray-400 text-white font-semibold rounded-xl cursor-not-allowed opacity-60"
+                    >
+                      Event Cancelled
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => handleRSVP(event)}
+                      className="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 active:bg-blue-800 transition-colors duration-200 shadow-md hover:shadow-lg"
+                    >
+                      Reserve Your Spot
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
