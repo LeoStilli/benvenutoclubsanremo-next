@@ -6,6 +6,8 @@ import Newsletter from "../../components/Newsletter";
 import { getUpcomingEvents, Event } from "../lib/events";
 import EventsSection from "../components/EventsSection";
 
+export const revalidate = 0;
+
 const Home = async () => {
   // Fetch events from Sanity CMS
   const upcomingEvents = await getUpcomingEvents();
@@ -64,6 +66,36 @@ const Home = async () => {
       </div>
 
       <EventsSection events={upcomingEvents} />
+
+      <section className="w-full py-20 bg-white relative overflow-hidden">
+        <div className="absolute top-10 left-10 w-24 h-24 bg-blue-100 rounded-full opacity-30"></div>
+        <div className="absolute bottom-10 right-10 w-32 h-32 bg-blue-50 rounded-full opacity-50"></div>
+
+        <div className="flex flex-col items-center gap-10 w-full px-4 max-w-[1200px] mx-auto relative z-10">
+          <div className="text-center">
+            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-medium mb-4 tracking-wide uppercase">
+              Our Partner
+            </div>
+            <h2 className="text-4xl font-bold text-[#000000] mb-3">
+              Proudly Supported By
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              We're grateful to the local partners who help make our community possible
+            </p>
+          </div>
+
+          <div className="w-full max-w-[900px] bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+            <Image
+              src="/Kambusa.jpeg"
+              alt="Ristorante La Kambusa Di Prota"
+              width={1080}
+              height={350}
+              className="w-full h-auto"
+              priority={false}
+            />
+          </div>
+        </div>
+      </section>
 
       <Newsletter />
       <Footer />

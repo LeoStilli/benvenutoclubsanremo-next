@@ -8,13 +8,8 @@ export const client = createClient({
   token: process.env.SANITY_API_READ_TOKEN,
 })
 
-// Helper function to build image URLs from Sanity image objects
+// Helper function to build image URLs from Sanity image objects.
+// Our queries dereference the asset (asset->{_id, url}), so use the url field directly.
 export function urlFor(source: any) {
-  if (!source || !source.asset) return ''
-
-  const { projectId, dataset } = client.config()
-  const imageId = source.asset._ref
-  const [id, dimensions, format] = imageId.split('-')
-
-  return `https://cdn.sanity.io/images/${projectId}/${dataset}/${id}-${dimensions}.${format}`
+  return source?.asset?.url ?? ''
 }

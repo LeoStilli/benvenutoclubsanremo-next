@@ -5,6 +5,8 @@ import Newsletter from "../../../components/Newsletter";
 import { getAllEvents } from "../../lib/events";
 import EventsGrid from "../../components/EventsGrid";
 
+export const revalidate = 0;
+
 const EventsPage = async () => {
   // Fetch all events from Sanity CMS
   const allEvents = await getAllEvents();

@@ -9,6 +9,7 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!
 export default defineConfig({
   name: 'benvenuto-club-sanremo',
   title: 'Benvenuto Club Sanremo',
+  basePath: '/studio',
 
   projectId,
   dataset,

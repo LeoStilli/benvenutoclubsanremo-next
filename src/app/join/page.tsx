@@ -225,10 +225,10 @@ const JoinUsPage = () => {
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
-                    href="mailto:benvenutoclubofsanremo@gmail.com?subject=Membership Inquiry"
+                    href="/membership"
                     className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl"
                   >
-                    Get in Touch
+                    Sign Up Now
                   </a>
                   <a
                     href="/events"

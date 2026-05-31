@@ -51,9 +51,9 @@ export const activeEventsQuery = groq`
   }
 `
 
-// Get upcoming active events (for homepage)
+// Get upcoming active events (for homepage) — filtered to events the owner marks "Featured"
 export const upcomingActiveEventsQuery = groq`
-  *[_type == "event" && publishedAt <= now() && status == "active" && date >= now()] | order(date asc) [0...3] {
+  *[_type == "event" && publishedAt <= now() && status == "active" && date >= now() && featured == true] | order(date asc) {
     ${eventFields}
   }
 `
