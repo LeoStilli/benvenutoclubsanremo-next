@@ -42,7 +42,7 @@ const MembershipPage = () => {
 
           <div className="w-full bg-white rounded-2xl shadow-lg border border-gray-100 p-4 md:p-8">
             <iframe
-              data-tally-src="https://tally.so/embed/1A6GR4?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              data-tally-src="https://tally.so/embed/lbv9j5?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
               loading="lazy"
               width="100%"
               height="500"
