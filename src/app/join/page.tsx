@@ -168,8 +168,111 @@ const JoinUsPage = () => {
         </div>
       </div>
 
+      {/* Partner Discounts */}
+      <div className="w-full py-16 bg-[#f5f5f5] flex flex-col items-center relative overflow-hidden">
+        <div className="absolute top-10 left-10 w-24 h-24 bg-blue-100 rounded-full opacity-30"></div>
+        <div className="absolute bottom-10 right-10 w-32 h-32 bg-blue-50 rounded-full opacity-50"></div>
+
+        <div className="flex flex-col items-center gap-12 w-full px-4 max-w-[1200px] relative z-10">
+          <div className="text-center">
+            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-medium mb-4 tracking-wide uppercase">
+              Members Only
+            </div>
+            <h2 className="text-4xl font-bold mb-4 text-[#000000]">
+              Discounts at Our Partners
+            </h2>
+            <p className="text-gray-600 text-lg max-w-3xl">
+              BCS members enjoy special prices at every business that proudly supports our community
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col">
+              <div className="relative w-full h-[200px] bg-white">
+                <Image
+                  src="/Kambusa.jpeg"
+                  alt="Ristorante La Kambusa Di Prota"
+                  fill
+                  className="object-cover object-right"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+                <div className="absolute top-3 right-3 px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full shadow-md">
+                  Member Discount
+                </div>
+              </div>
+              <div className="p-6 text-center flex flex-col flex-1">
+                <h3 className="text-lg font-semibold text-[#000000]">
+                  Ristorante La Kambusa Di Prota
+                </h3>
+                <p className="text-gray-500 text-sm mt-1">Ristorante · Sanremo</p>
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <div className="text-2xl font-bold text-blue-600">10% off</div>
+                  <div className="text-sm text-gray-600 mt-1">on every meal</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col">
+              <div className="relative w-full h-[200px] bg-white flex items-center justify-center p-6">
+                <Image
+                  src="/AndreaDelTufo.png"
+                  alt="Andrea Del Tufo Parrucchiere"
+                  width={800}
+                  height={700}
+                  className="max-h-full w-auto object-contain"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+                <div className="absolute top-3 right-3 px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full shadow-md">
+                  Member Discount
+                </div>
+              </div>
+              <div className="p-6 text-center flex flex-col flex-1">
+                <h3 className="text-lg font-semibold text-[#000000]">
+                  Andrea Del Tufo
+                </h3>
+                <p className="text-gray-500 text-sm mt-1">Parrucchiere · Sanremo</p>
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <div className="text-2xl font-bold text-blue-600">10% off</div>
+                  <div className="text-sm text-gray-600 mt-1">on all cuts</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col">
+              <div className="relative w-full h-[200px] bg-white flex items-center justify-center p-6">
+                <Image
+                  src="/Nettuno.png"
+                  alt="Nettuno"
+                  width={800}
+                  height={700}
+                  className="max-h-full w-auto object-contain"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+                <div className="absolute top-3 right-3 px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full shadow-md">
+                  Member Discount
+                </div>
+              </div>
+              <div className="p-6 text-center flex flex-col flex-1">
+                <h3 className="text-lg font-semibold text-[#000000]">
+                  Nettuno
+                </h3>
+                <p className="text-gray-500 text-sm mt-1">Spiaggia · Sanremo</p>
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <div className="text-2xl font-bold text-blue-600">€25/day</div>
+                  <div className="text-sm text-gray-600 mt-1">instead of €31/day</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-gray-500 text-sm text-center max-w-2xl">
+            Just show your BCS membership at participating partners to claim your discount.
+          </p>
+        </div>
+      </div>
+
       {/* Membership Information */}
-      <div className="w-full py-16 bg-[#f5f5f5] flex flex-col items-center">
+      <div className="w-full py-16 bg-white flex flex-col items-center">
         <div className="flex flex-col items-center gap-8 w-full px-4 max-w-[800px]">
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-6 text-[#000000]">
