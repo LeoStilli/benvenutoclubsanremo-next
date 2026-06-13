@@ -74,7 +74,7 @@ const Home = async () => {
         <div className="flex flex-col items-center gap-10 w-full px-4 max-w-[1200px] mx-auto relative z-10">
           <div className="text-center">
             <div className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-medium mb-4 tracking-wide uppercase">
-              Our Partner
+              Our Partners
             </div>
             <h2 className="text-4xl font-bold text-[#000000] mb-3">
               Proudly Supported By
@@ -84,15 +84,43 @@ const Home = async () => {
             </p>
           </div>
 
-          <div className="w-full max-w-[900px] bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
-            <Image
-              src="/Kambusa.jpeg"
-              alt="Ristorante La Kambusa Di Prota"
-              width={1080}
-              height={350}
-              className="w-full h-auto"
-              priority={false}
-            />
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col">
+              <div className="relative w-full h-[260px] bg-white">
+                <Image
+                  src="/Kambusa.jpeg"
+                  alt="Ristorante La Kambusa Di Prota"
+                  fill
+                  className="object-cover object-right"
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                />
+              </div>
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-semibold text-[#000000]">
+                  Ristorante La Kambusa Di Prota
+                </h3>
+                <p className="text-gray-500 text-sm mt-1">Sanremo</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col">
+              <div className="relative w-full h-[260px] bg-white flex items-center justify-center p-6">
+                <Image
+                  src="/AndreaDelTufo.png"
+                  alt="Andrea Del Tufo Parrucchiere"
+                  width={800}
+                  height={700}
+                  className="max-h-full w-auto object-contain"
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                />
+              </div>
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-semibold text-[#000000]">
+                  Andrea Del Tufo
+                </h3>
+                <p className="text-gray-500 text-sm mt-1">Parrucchiere · Sanremo</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
