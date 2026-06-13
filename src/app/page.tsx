@@ -84,7 +84,7 @@ const Home = async () => {
             </p>
           </div>
 
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col">
               <div className="relative w-full h-[260px] bg-white">
                 <Image
@@ -99,7 +99,7 @@ const Home = async () => {
                 <h3 className="text-xl font-semibold text-[#000000]">
                   Ristorante La Kambusa Di Prota
                 </h3>
-                <p className="text-gray-500 text-sm mt-1">Sanremo</p>
+                <p className="text-gray-500 text-sm mt-1">Ristorante · Sanremo</p>
               </div>
             </div>
 
@@ -119,6 +119,25 @@ const Home = async () => {
                   Andrea Del Tufo
                 </h3>
                 <p className="text-gray-500 text-sm mt-1">Parrucchiere · Sanremo</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col">
+              <div className="relative w-full h-[260px] bg-white flex items-center justify-center p-6">
+                <Image
+                  src="/Nettuno.png"
+                  alt="Nettuno"
+                  width={800}
+                  height={700}
+                  className="max-h-full w-auto object-contain"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+              </div>
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-semibold text-[#000000]">
+                  Nettuno
+                </h3>
+                <p className="text-gray-500 text-sm mt-1">Spiaggia · Sanremo</p>
               </div>
             </div>
           </div>
