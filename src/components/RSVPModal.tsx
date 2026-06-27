@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Event } from "../data/events";
+import { Event } from "../lib/events";
 
 interface RSVPModalProps {
   event: Event | null;

@@ -8,6 +8,30 @@ import EventsSection from "../components/EventsSection";
 
 export const revalidate = 0;
 
+const sponsors = [
+  {
+    src: "/Kambusa.jpeg",
+    name: "Ristorante La Kambusa Di Prota",
+    type: "Ristorante · Sanremo",
+    cover: true,
+  },
+  {
+    src: "/AndreaDelTufo.png",
+    name: "Andrea Del Tufo",
+    type: "Parrucchiere · Sanremo",
+  },
+  {
+    src: "/Nettuno.png",
+    name: "Nettuno",
+    type: "Spiaggia · Sanremo",
+  },
+  {
+    src: "/SanremoRealEstate.jpeg",
+    name: "Sanremo Real Estate",
+    type: "Agenzia Immobiliare · Sanremo",
+  },
+];
+
 const Home = async () => {
   // Fetch events from Sanity CMS
   const upcomingEvents = await getUpcomingEvents();
@@ -67,9 +91,9 @@ const Home = async () => {
 
       <EventsSection events={upcomingEvents} />
 
-      <section className="w-full py-20 bg-white relative overflow-hidden">
-        <div className="absolute top-10 left-10 w-24 h-24 bg-blue-100 rounded-full opacity-30"></div>
-        <div className="absolute bottom-10 right-10 w-32 h-32 bg-blue-50 rounded-full opacity-50"></div>
+      <section className="w-full py-20 bg-gradient-to-b from-[#e8f0fb] to-[#cfe0f5] relative overflow-hidden">
+        <div className="absolute top-10 left-10 w-24 h-24 bg-blue-200 rounded-full opacity-30"></div>
+        <div className="absolute bottom-10 right-10 w-32 h-32 bg-blue-200 rounded-full opacity-40"></div>
 
         <div className="flex flex-col items-center gap-10 w-full px-4 max-w-[1200px] mx-auto relative z-10">
           <div className="text-center">
@@ -84,61 +108,46 @@ const Home = async () => {
             </p>
           </div>
 
-          <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col">
-              <div className="relative w-full h-[260px] bg-white">
-                <Image
-                  src="/Kambusa.jpeg"
-                  alt="Ristorante La Kambusa Di Prota"
-                  fill
-                  className="object-cover object-right"
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                />
-              </div>
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-semibold text-[#000000]">
-                  Ristorante La Kambusa Di Prota
-                </h3>
-                <p className="text-gray-500 text-sm mt-1">Ristorante · Sanremo</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col">
-              <div className="relative w-full h-[260px] bg-white flex items-center justify-center p-6">
-                <Image
-                  src="/AndreaDelTufo.png"
-                  alt="Andrea Del Tufo Parrucchiere"
-                  width={800}
-                  height={700}
-                  className="max-h-full w-auto object-contain"
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                />
-              </div>
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-semibold text-[#000000]">
-                  Andrea Del Tufo
-                </h3>
-                <p className="text-gray-500 text-sm mt-1">Parrucchiere · Sanremo</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col">
-              <div className="relative w-full h-[260px] bg-white flex items-center justify-center p-6">
-                <Image
-                  src="/Nettuno.png"
-                  alt="Nettuno"
-                  width={800}
-                  height={700}
-                  className="max-h-full w-auto object-contain"
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                />
-              </div>
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-semibold text-[#000000]">
-                  Nettuno
-                </h3>
-                <p className="text-gray-500 text-sm mt-1">Spiaggia · Sanremo</p>
-              </div>
+          <div className="w-full overflow-hidden">
+            <div className="flex w-max animate-marquee">
+              {[...sponsors, ...sponsors].map((s, i) => (
+                <div
+                  key={i}
+                  aria-hidden={i >= sponsors.length}
+                  className="w-[360px] shrink-0 mr-8 bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col"
+                >
+                  <div
+                    className={`relative w-full h-[260px] bg-white ${
+                      s.cover ? "" : "flex items-center justify-center p-6"
+                    }`}
+                  >
+                    {s.cover ? (
+                      <Image
+                        src={s.src}
+                        alt={s.name}
+                        fill
+                        className="object-cover object-right"
+                        sizes="360px"
+                      />
+                    ) : (
+                      <Image
+                        src={s.src}
+                        alt={s.name}
+                        width={800}
+                        height={700}
+                        className="max-h-full w-auto object-contain"
+                        sizes="360px"
+                      />
+                    )}
+                  </div>
+                  <div className="p-6 text-center">
+                    <h3 className="text-xl font-semibold text-[#000000]">
+                      {s.name}
+                    </h3>
+                    <p className="text-gray-500 text-sm mt-1">{s.type}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
