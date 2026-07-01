@@ -263,6 +263,84 @@ const JoinUsPage = () => {
                 </div>
               </div>
             </div>
+
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col">
+              <div className="relative w-full h-[200px] bg-white flex items-center justify-center p-6">
+                <Image
+                  src="/DaNico.jpeg"
+                  alt="Da Nico"
+                  width={800}
+                  height={700}
+                  className="max-h-full w-auto object-contain"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+                <div className="absolute top-3 right-3 px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full shadow-md">
+                  Member Discount
+                </div>
+              </div>
+              <div className="p-6 text-center flex flex-col flex-1">
+                <h3 className="text-lg font-semibold text-[#000000]">
+                  Da Nico
+                </h3>
+                <p className="text-gray-500 text-sm mt-1">Ristorante · Sanremo</p>
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <div className="text-2xl font-bold text-blue-600">10% off</div>
+                  <div className="text-sm text-gray-600 mt-1">on every meal</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col">
+              <div className="relative w-full h-[200px] bg-white flex items-center justify-center p-6">
+                <Image
+                  src="/GrandHotelDesAnglais.png"
+                  alt="Grand Hotel Des Anglais"
+                  width={800}
+                  height={700}
+                  className="max-h-full w-auto object-contain"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+                <div className="absolute top-3 right-3 px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full shadow-md">
+                  Member Discount
+                </div>
+              </div>
+              <div className="p-6 text-center flex flex-col flex-1">
+                <h3 className="text-lg font-semibold text-[#000000]">
+                  Grand Hotel Des Anglais
+                </h3>
+                <p className="text-gray-500 text-sm mt-1">Hotel · Sanremo</p>
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <div className="text-2xl font-bold text-blue-600">Discount</div>
+                  <div className="text-sm text-gray-600 mt-1">on the Wellness area</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col">
+              <div className="relative w-full h-[200px] bg-white flex items-center justify-center p-6">
+                <Image
+                  src="/LidoLaFontana-v2.jpeg"
+                  alt="Lido La Fontana"
+                  width={800}
+                  height={700}
+                  className="max-h-full w-auto object-contain"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+                <div className="absolute top-3 right-3 px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full shadow-md">
+                  Member Discount
+                </div>
+              </div>
+              <div className="p-6 text-center flex flex-col flex-1">
+                <h3 className="text-lg font-semibold text-[#000000]">
+                  Lido La Fontana
+                </h3>
+                <p className="text-gray-500 text-sm mt-1">Stabilimento Balneare · Sanremo</p>
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <div className="text-2xl font-bold text-blue-600">10% off</div>
+                  <div className="text-sm text-gray-600 mt-1">on your visit</div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <p className="text-gray-500 text-sm text-center max-w-2xl">

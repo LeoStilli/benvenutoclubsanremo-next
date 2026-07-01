@@ -30,6 +30,21 @@ const sponsors = [
     name: "Sanremo Real Estate",
     type: "Agenzia Immobiliare · Sanremo",
   },
+  {
+    src: "/DaNico.jpeg",
+    name: "Da Nico",
+    type: "Ristorante · Sanremo",
+  },
+  {
+    src: "/GrandHotelDesAnglais.png",
+    name: "Grand Hotel Des Anglais",
+    type: "Hotel · Sanremo",
+  },
+  {
+    src: "/LidoLaFontana-v2.jpeg",
+    name: "Lido La Fontana",
+    type: "Stabilimento Balneare · Sanremo",
+  },
 ];
 
 const Home = async () => {
@@ -114,11 +129,11 @@ const Home = async () => {
                 <div
                   key={i}
                   aria-hidden={i >= sponsors.length}
-                  className="w-[360px] shrink-0 mr-8 bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col"
+                  className="w-[440px] shrink-0 mr-8 bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col"
                 >
                   <div
-                    className={`relative w-full h-[260px] bg-white ${
-                      s.cover ? "" : "flex items-center justify-center p-6"
+                    className={`relative w-full h-[320px] bg-white ${
+                      s.cover ? "" : "flex items-center justify-center p-8"
                     }`}
                   >
                     {s.cover ? (
@@ -127,7 +142,7 @@ const Home = async () => {
                         alt={s.name}
                         fill
                         className="object-cover object-right"
-                        sizes="360px"
+                        sizes="440px"
                       />
                     ) : (
                       <Image
@@ -136,15 +151,15 @@ const Home = async () => {
                         width={800}
                         height={700}
                         className="max-h-full w-auto object-contain"
-                        sizes="360px"
+                        sizes="440px"
                       />
                     )}
                   </div>
                   <div className="p-6 text-center">
-                    <h3 className="text-xl font-semibold text-[#000000]">
+                    <h3 className="text-2xl font-semibold text-[#000000]">
                       {s.name}
                     </h3>
-                    <p className="text-gray-500 text-sm mt-1">{s.type}</p>
+                    <p className="text-gray-500 text-base mt-1">{s.type}</p>
                   </div>
                 </div>
               ))}
