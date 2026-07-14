@@ -110,13 +110,12 @@ const JoinUsPage = () => {
                 Learn Italian
               </h3>
               <div className="text-center mb-4">
-                <span className="text-2xl font-bold text-blue-600">€30/month</span>
+                <span className="text-2xl font-bold text-blue-600">€130/semester</span>
                 <div className="text-sm text-gray-600">A1, A2, B1 Levels</div>
               </div>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Proper Italian lessons from an amazing instructor. All learning materials included.
-                Held in a historic palazzo in Sanremo. Additional costs include a fee for insurance
-                and palazzo membership, plus a BCS Club fee.
+                Proper Italian lessons from an amazing instructor. To be held in Sanremo, taught by a
+                fun local. €130 a semester.
               </p>
               <div className="mt-4 p-3 bg-blue-50 rounded-lg">
                 <p className="text-xs text-blue-800 font-medium">
@@ -156,12 +155,13 @@ const JoinUsPage = () => {
                 Symphony Orchestra
               </h3>
               <div className="text-center mb-4">
-                <span className="text-2xl font-bold text-purple-600">€3 Pass</span>
-                <div className="text-sm text-gray-600">€8 tickets instead of €15</div>
+                <span className="text-2xl font-bold text-purple-600">Year Round Discounts</span>
+                <div className="text-sm text-gray-600">€8 & €15 tickets</div>
               </div>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Sanremo Symphony Orchestra Season Pass gives you €8/concert tickets through June 30th.
-                A summer season pass at Teatro Alfano will also be available offering €15 tickets instead of €25.
+                Sanremo Symphony Orchestra Pass gives you a summer season pass at Teatro Alfano
+                offering €15 tickets instead of €25. From September through June, €8/concert tickets
+                available for performances at the Teatro Casino.
               </p>
             </div>
           </div>
@@ -338,6 +338,32 @@ const JoinUsPage = () => {
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <div className="text-2xl font-bold text-blue-600">10% off</div>
                   <div className="text-sm text-gray-600 mt-1">on your visit</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col">
+              <div className="relative w-full h-[200px] bg-white flex items-center justify-center p-6">
+                <Image
+                  src="/Hotel-Paradiso-visione-intera.png"
+                  alt="Hotel Paradiso"
+                  width={800}
+                  height={700}
+                  className="max-h-full w-auto object-contain"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+                <div className="absolute top-3 right-3 px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full shadow-md">
+                  Member Discount
+                </div>
+              </div>
+              <div className="p-6 text-center flex flex-col flex-1">
+                <h3 className="text-lg font-semibold text-[#000000]">
+                  Hotel Paradiso
+                </h3>
+                <p className="text-gray-500 text-sm mt-1">Hotel · Sanremo</p>
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <div className="text-2xl font-bold text-blue-600">Discounted rooms</div>
+                  <div className="text-sm text-gray-600 mt-1">plus holiday celebration evenings</div>
                 </div>
               </div>
             </div>
