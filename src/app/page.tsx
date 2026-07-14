@@ -45,6 +45,11 @@ const sponsors = [
     name: "Lido La Fontana",
     type: "Stabilimento Balneare · Sanremo",
   },
+  {
+    src: "/Hotel-Paradiso-visione-intera.png",
+    name: "Hotel Paradiso",
+    type: "Hotel · Sanremo",
+  },
 ];
 
 const Home = async () => {
