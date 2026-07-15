@@ -12,28 +12,28 @@ const sponsors = [
   {
     src: "/Kambusa.jpeg",
     name: "Ristorante La Kambusa Di Prota",
-    type: "Ristorante · Sanremo",
+    type: "Restaurant · Sanremo",
     cover: true,
   },
   {
     src: "/AndreaDelTufo.png",
     name: "Andrea Del Tufo",
-    type: "Parrucchiere · Sanremo",
+    type: "Hairdresser · Sanremo",
   },
   {
     src: "/Nettuno.png",
     name: "Nettuno",
-    type: "Spiaggia · Sanremo",
+    type: "Seaside Establishment · Sanremo",
   },
   {
     src: "/SanremoRealEstate.jpeg",
     name: "Sanremo Real Estate",
-    type: "Agenzia Immobiliare · Sanremo",
+    type: "Real Estate Agency · Sanremo",
   },
   {
     src: "/DaNico.jpeg",
     name: "Da Nico",
-    type: "Ristorante · Sanremo",
+    type: "Restaurant · Sanremo",
   },
   {
     src: "/GrandHotelDesAnglais.png",
@@ -41,12 +41,12 @@ const sponsors = [
     type: "Hotel · Sanremo",
   },
   {
-    src: "/LidoLaFontana-v2.jpeg",
+    src: "/Lido La Fontana.png",
     name: "Lido La Fontana",
-    type: "Stabilimento Balneare · Sanremo",
+    type: "Seaside Establishment · Sanremo",
   },
   {
-    src: "/Hotel-Paradiso-visione-intera.png",
+    src: "/Hotel Paradiso.png",
     name: "Hotel Paradiso",
     type: "Hotel · Sanremo",
   },
@@ -92,17 +92,20 @@ const Home = async () => {
                 Our Community
               </h3>
               <p className="text-lg text-gray-700">
-                Founded in 2005, the BCS began with a simple yet powerful idea:
-                to bring together English speakers in the Sanremo area through
-                friendship, culture, and shared experiences. Today, our thriving
-                community of over 400 members enjoys a lively calendar of
-                events—from guided museum visits and town explorations to
-                stimulating discussions, social lunches, cocktails, and outdoor
-                activities like hiking, padel, and tennis. Whether you are
-                looking to connect, learn, or simply enjoy good company, our
-                monthly newsletter showcases a diverse range of events designed
-                to spark curiosity and foster a true sense of belonging. At BCS,
-                it is more than a club—it is a community.
+                Founded in 2005, the BCS was never merely a club, but rather a
+                quiet revolution of connection—a gathering of like-minded souls
+                united by the English tongue and a shared appetite for la dolce
+                vita along the Ligurian coast. Today, what began as a modest
+                assembly has blossomed into a vibrant confraternity of over four
+                hundred members, whose days are punctuated by a rich tapestry of
+                pursuits: the quiet contemplation of masterpieces in hushed
+                museum halls, the animated chatter of a hillside exploration, the
+                clink of glasses at sundown, and the friendly sound of a tennis
+                ball beneath the Mediterranean sun. Whether you are drawn by the
+                thirst for knowledge, the pursuit of new friendships, or simply
+                the joy of effortless company, our monthly chronicle overflows
+                with invitations designed to stir the intellect and warm the
+                heart. For within the BCS, we do not merely gather—we belong.
               </p>
             </div>
           </div>
@@ -124,7 +127,7 @@ const Home = async () => {
               Proudly Supported By
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              We're grateful to the local partners who help make our community possible
+              We are deeply grateful to our local partners—for so generously helping our community flourish.
             </p>
           </div>
 

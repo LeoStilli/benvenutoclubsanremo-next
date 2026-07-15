@@ -370,7 +370,7 @@ const JoinUsPage = () => {
           </div>
 
           <p className="text-gray-500 text-sm text-center max-w-2xl">
-            Just show your BCS membership at participating partners to claim your discount.
+            Just show your BCS membership card at participating partners to claim your discount.
           </p>
         </div>
       </div>
@@ -384,17 +384,21 @@ const JoinUsPage = () => {
             </h2>
             <div className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-lg border border-blue-100">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                At Benvenuto Club Sanremo, we believe that life's greatest adventures happen when we come together.
-                Whether you're new to the Italian Riviera or have been calling it home for years, our community offers
-                you the chance to create meaningful connections, explore hidden gems of Ligurian culture, and build
-                friendships that extend far beyond our monthly gatherings.
+                At the BCS, we hold this simple truth to be self-evident: that
+                the finest adventures are not solitary affairs, but rather
+                journeys best undertaken in good company. Whether you have but
+                recently arrived upon the shores of the Italian Riviera, or have
+                long called these sun-drenched hills your home, our circle offers
+                you the rare privilege of genuine connection—the discovery of
+                Liguria's hidden treasures, the warmth of friendships that
+                outlast any single evening's gathering.
               </p>
 
               <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                From intimate wine tastings in centuries-old cellars to spirited hiking adventures along the coastal
-                trails, from thought-provoking cultural discussions to simply sharing a laugh over aperitivos at sunset—
-                every moment with BCS is designed to enrich your experience of living in this beautiful corner of Italy.
-                Because the best stories aren't just lived, they're shared.
+                Every moment within the BCS is carefully woven to deepen your
+                embrace of this exquisite corner of Italy—for we are firm
+                believers that the most memorable stories are not merely lived,
+                but shared.
               </p>
 
               {/* Membership Details */}
