@@ -50,6 +50,16 @@ const sponsors = [
     name: "Hotel Paradiso",
     type: "Hotel · Sanremo",
   },
+  {
+    src: "/Allianz.png",
+    name: "Alessio Palladini",
+    type: "Allianz Global Investors · Sanremo",
+  },
+  {
+    src: "/Tailor.png",
+    name: "Atelier Maggy",
+    type: "Tailor · Sanremo",
+  },
 ];
 
 const Home = async () => {

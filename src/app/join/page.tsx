@@ -168,6 +168,73 @@ const JoinUsPage = () => {
         </div>
       </div>
 
+      {/* Sponsors */}
+      <div className="w-full py-16 bg-gradient-to-b from-white to-[#f5f5f5] flex flex-col items-center">
+        <div className="flex flex-col items-center gap-12 w-full px-4 max-w-[900px]">
+          <div className="text-center">
+            <div className="inline-block px-4 py-2 bg-amber-100 text-amber-700 rounded-full text-sm font-medium mb-4 tracking-wide uppercase">
+              Sponsors
+            </div>
+            <h2 className="text-4xl font-bold mb-4 text-[#000000]">
+              Our Sponsors
+            </h2>
+            <p className="text-gray-600 text-lg max-w-3xl">
+              Proudly sponsored by those who believe in what we do. Their generous support helps the BCS grow bigger and stronger, so our community can flourish for years to come.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col">
+              <div className="relative w-full h-[200px] bg-white flex items-center justify-center p-6">
+                <Image
+                  src="/Allianz.png"
+                  alt="Alessio Palladini - Allianz Global Investors"
+                  width={800}
+                  height={700}
+                  className="max-h-full w-auto object-contain"
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                />
+                <div className="absolute top-3 right-3 px-3 py-1 bg-amber-500 text-white text-xs font-semibold rounded-full shadow-md">
+                  Sponsor
+                </div>
+              </div>
+              <div className="p-6 text-center flex flex-col flex-1">
+                <h3 className="text-lg font-semibold text-[#000000]">
+                  Alessio Palladini
+                </h3>
+                <p className="text-gray-500 text-sm mt-1">
+                  Allianz Global Investors · Sanremo
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col">
+              <div className="relative w-full h-[200px] bg-white flex items-center justify-center p-6">
+                <Image
+                  src="/SanremoRealEstate.jpeg"
+                  alt="Simone Biamonti"
+                  width={800}
+                  height={700}
+                  className="max-h-full w-auto object-contain"
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                />
+                <div className="absolute top-3 right-3 px-3 py-1 bg-amber-500 text-white text-xs font-semibold rounded-full shadow-md">
+                  Sponsor
+                </div>
+              </div>
+              <div className="p-6 text-center flex flex-col flex-1">
+                <h3 className="text-lg font-semibold text-[#000000]">
+                  Simone Biamonti
+                </h3>
+                <p className="text-gray-500 text-sm mt-1">
+                  Sanremo Real Estate · Sanremo
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Partner Discounts */}
       <div className="w-full py-16 bg-[#f5f5f5] flex flex-col items-center relative overflow-hidden">
         <div className="absolute top-10 left-10 w-24 h-24 bg-blue-100 rounded-full opacity-30"></div>
@@ -364,6 +431,32 @@ const JoinUsPage = () => {
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <div className="text-2xl font-bold text-blue-600">Discounted rooms</div>
                   <div className="text-sm text-gray-600 mt-1">plus holiday celebration evenings</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col">
+              <div className="relative w-full h-[200px] bg-white flex items-center justify-center p-6">
+                <Image
+                  src="/Tailor.png"
+                  alt="Atelier Maggy"
+                  width={800}
+                  height={700}
+                  className="max-h-full w-auto object-contain"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+                <div className="absolute top-3 right-3 px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full shadow-md">
+                  Member Discount
+                </div>
+              </div>
+              <div className="p-6 text-center flex flex-col flex-1">
+                <h3 className="text-lg font-semibold text-[#000000]">
+                  Atelier Maggy
+                </h3>
+                <p className="text-gray-500 text-sm mt-1">Sartoria · Sanremo</p>
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <div className="text-2xl font-bold text-blue-600">10% off</div>
+                  <div className="text-sm text-gray-600 mt-1">on your order</div>
                 </div>
               </div>
             </div>
