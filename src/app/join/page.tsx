@@ -29,7 +29,10 @@ const JoinUsPage = () => {
       </div>
 
       {/* Membership Benefits */}
-      <div className="w-full py-16 bg-[#f5f5f5] flex flex-col items-center">
+      <div
+        id="content"
+        className="w-full py-16 bg-[#f5f5f5] flex flex-col items-center"
+      >
         <div className="flex flex-col items-center gap-12 w-full px-4 max-w-[1200px]">
           <div className="text-center">
             <h2 className="text-4xl font-bold mb-4 text-[#000000]">
@@ -457,6 +460,35 @@ const JoinUsPage = () => {
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <div className="text-2xl font-bold text-blue-600">10% off</div>
                   <div className="text-sm text-gray-600 mt-1">on your order</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col">
+              <div className="relative w-full h-[200px] bg-white">
+                <Image
+                  src="/mattia.jpg"
+                  alt="Mattia - Car Service to Nice Airport"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+                <div className="absolute top-3 right-3 px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full shadow-md">
+                  Member Discount
+                </div>
+              </div>
+              <div className="p-6 text-center flex flex-col flex-1">
+                <h3 className="text-lg font-semibold text-[#000000]">
+                  Mattia
+                </h3>
+                <p className="text-gray-500 text-sm mt-1">
+                  Car Service to Nice Airport · Sanremo
+                </p>
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <div className="text-2xl font-bold text-blue-600">10% off</div>
+                  <div className="text-sm text-gray-600 mt-1">
+                    on your transfer
+                  </div>
                 </div>
               </div>
             </div>

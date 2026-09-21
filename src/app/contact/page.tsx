@@ -29,6 +29,7 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
+      <div id="content" />
       <Newsletter />
       <div className="w-full bg-linear-to-t bg-white flex items-center justify-center py-16 px-4">
         <div className="w-full max-w-[1500px] grid lg:grid-cols-2 gap-8 lg:px-8 items-center">

@@ -60,6 +60,12 @@ const sponsors = [
     name: "Atelier Maggy",
     type: "Tailor · Sanremo",
   },
+  {
+    src: "/mattia.jpg",
+    name: "Mattia",
+    type: "Car Service to Nice Airport · Sanremo",
+    cover: true,
+  },
 ];
 
 const Home = async () => {
@@ -86,7 +92,10 @@ const Home = async () => {
           </div>
         </div>
       </div>
-      <div className="w-full py-12 bg-[#f5f5f5] flex flex-col items-center">
+      <div
+        id="content"
+        className="w-full py-12 bg-[#f5f5f5] flex flex-col items-center"
+      >
         <div className="flex flex-col items-center gap-6 w-full px-10 max-w-[1500px]">
           <h2 className="text-3xl font-bold mb-8 text-[#000000]">About Us</h2>
           <div className="flex flex-col md:flex-row items-center justify-center gap-12 w-full px-1">

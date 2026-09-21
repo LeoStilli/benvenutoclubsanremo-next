@@ -30,7 +30,9 @@ const EventsPage = async () => {
         </div>
       </div>
 
-      <EventsGrid events={allEvents} />
+      <div id="content">
+        <EventsGrid events={allEvents} />
+      </div>
 
       <Newsletter />
       <Footer />

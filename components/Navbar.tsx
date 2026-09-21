@@ -1,8 +1,38 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+
+// Native smooth scroll runs at a fixed browser speed; animate it ourselves so
+// we can control the duration (~50% slower than the browser default).
+const SCROLL_DURATION = 900;
+
+const easeInOutQuad = (t: number) =>
+  t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+
+const scrollToContent = () => {
+  const el = document.getElementById("content");
+  if (!el) return;
+  const startY = window.scrollY;
+  const targetY = startY + el.getBoundingClientRect().top;
+  const diff = targetY - startY;
+  if (diff === 0) return;
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    window.scrollTo(0, targetY);
+    return;
+  }
+
+  let start: number | null = null;
+  const step = (timestamp: number) => {
+    if (start === null) start = timestamp;
+    const progress = Math.min((timestamp - start) / SCROLL_DURATION, 1);
+    window.scrollTo(0, startY + diff * easeInOutQuad(progress));
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+};
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,8 +41,48 @@ const Navbar = () => {
     { name: "Home", route: "/" },
     { name: "Events", route: "/events" },
     { name: "Join Us", route: "/join" },
+    { name: "Volunteering", route: "/volunteering" },
     { name: "Contact", route: "/contact" },
   ];
+
+  // After navigating to a new page via a nav link, smooth-scroll to the
+  // content once it lands in the DOM (streamed pages may render it late).
+  useEffect(() => {
+    if (sessionStorage.getItem("scrollToContent") !== "1") return;
+    window.scrollTo(0, 0);
+    let frame: number;
+    let tries = 0;
+    const tick = () => {
+      const el = document.getElementById("content");
+      if (el) {
+        // Consume the flag only once we actually scroll, so React's
+        // StrictMode mount/cleanup/mount cycle doesn't swallow it.
+        sessionStorage.removeItem("scrollToContent");
+        scrollToContent();
+      } else if (tries++ < 60) {
+        frame = requestAnimationFrame(tick);
+      } else {
+        sessionStorage.removeItem("scrollToContent");
+      }
+    };
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [pathname]);
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    route: string
+  ) => {
+    setMenuOpen(false);
+    if (pathname === route) {
+      // Same page: animate straight to the content.
+      e.preventDefault();
+      scrollToContent();
+    } else {
+      // Different page: land at the top, then animate down after it mounts.
+      sessionStorage.setItem("scrollToContent", "1");
+    }
+  };
 
   return (
     <div className="w-full h-[120px] text-white z-10 absolute top-0">
@@ -32,6 +102,8 @@ const Navbar = () => {
             <Link
               key={route.name}
               href={route.route}
+              scroll={false}
+              onClick={(e) => handleNavClick(e, route.route)}
               className={`text-xl py-2 ${
                 pathname === route.route
                   ? "font-bold border-b-2 text-blue-300"
@@ -70,10 +142,11 @@ const Navbar = () => {
             <Link
               key={route.name}
               href={route.route}
+              scroll={false}
               className={`text-xl py-2 w-full h-full text-center ${
                 pathname === route.route ? "font-bold text-blue-300" : ""
               }`}
-              onClick={() => setMenuOpen(false)}
+              onClick={(e) => handleNavClick(e, route.route)}
             >
               {route.name}
             </Link>
